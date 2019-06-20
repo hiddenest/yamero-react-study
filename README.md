@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 야매로! React 시작하기 (입문편)
 
-## Available Scripts
+## ⚠️ Disclamer
 
-In the project directory, you can run:
+본 강의는 React 혹은 웹 자체를 처음 맛보는 분들에게 React, 넓게는 프론트엔드가 어떤 느낌으로 동작하는지 알아보는 것을 목적으로 합니다.
 
-### `npm start`
+강의마다 참여자들의 학습 속도 및 상황, 그때 그때의 이야기에 따라 유동적으로 소스 코드의 퀄리티 및 주제가 변화합니다. 깔끔한 코드 및 정확한 로직보다는 '일단 돌아가는 것'만 집중하기에 양해 부탁드립니다.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+React를 보다 자세히 학습하시기 위해서는 공식 문서를 참조하시기 바랍니다.
+https://ko.reactjs.org
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 강의 기본 원칙
 
-### `npm run build`
+#### 언제나 그렇지만, 이렇게 배우면 안됩니다.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+무엇을 하는지 정해져있지만, 준비된 강의자료도, 옳은 설명도 없습니다.  
+각자 수업이 끝나고 나면 그 시간동안 배운 것을 돌아보고 맞는것 틀린것 점검하면서 **지식을 내 것으로 만드세요.**
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+#### 지식의 완전한 습득보다는 느낌만 잡습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+자바스크립트가 대체 어떻게 굴러가고, `.map`이 뭐고, `if()`가 무엇인지 세세하게 설명하지 않습니다.  
+다만, 어떤 것이 어떤 느낌으로 동작하게 되는 것인지 말로 풀어서 설명합니다.
 
-### `npm run eject`
+#### 만들면서 이해합니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+이번 강의에는 아래와 같은 것을 만들게 됩니다.
+본격 유 노우 미? (나를 아는지 테스트하는 사이트 만들기)
+https://do-you-know-chanhee.surge.sh
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![screenshot-1](./public/screenshot/screenshot-1.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![screenshot-2](./public/screenshot/screenshot-2.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![screenshot-3](./public/screenshot/screenshot-3.png)
