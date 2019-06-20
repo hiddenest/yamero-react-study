@@ -1,33 +1,85 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #111518;
 }
 
-.App-link {
-  color: #61dafb;
+.App-progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: #7185ff;
+  height: 5px;
+  transition: width .3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App-header {
+  padding: 0 30px 30px;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.App-header h1 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.App-header p {
+  padding: 0 10px;
+  font-size: 1.25rem;
+  color: #97a1a9;
+}
+
+.App-content .dropdown, .App-content input {
+  width: 250px;
+}
+
+.App-navigator {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  text-align: left;
+}
+
+.App-navigator .column {
+  flex-grow: 1;
+}
+
+.App-navigator .column:last-child {
+  text-align: right;
+}
+
+@media all and (max-width: 640px) {
+  .App-navigator .column {
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-navigator .column:first-child {
+    padding-right: 7.5px;
+  }
+
+  .App-navigator .column:last-child {
+    padding-left: 7.5px;
+  }
+
+  .App-navigator .btn {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 641px) {
+  .App-navigator .column {
+    padding: 30px 40px;
+  }
+
+  .App-navigator .btn {
+    width: 180px;
   }
 }

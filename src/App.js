@@ -1,23 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import './Button.css';
+import './Dropdown.css';
+
 function App() {
+  const [blink, setBlink] = useState(false);
+  const [list] = useState(['ㅁㄴㅇㄹ', 4, '안녕하세요', '으아아', '띠용']);
+
+  function handleClickButton() {
+    setBlink(!blink);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className='dropdown'>
+          <button
+            className='btn btn-sub'
+            onClick={handleClickButton}
+          >
+            짜잔
+          </button>
+          {blink === true && (
+            <ul className='menu-md'>
+              {list.map((item) => (
+                <li>
+                  <button>
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </header>
     </div>
   );
