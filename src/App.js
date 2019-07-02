@@ -4,9 +4,6 @@ import Dropdown from './Dropdown';
 
 import './App.css';
 
-import './Button.css';
-import './Dropdown.css';
-
 function App() {
   const [a, setA] = useState();
   const [b, setB] = useState();

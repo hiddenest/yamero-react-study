@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import './Button.css';
+import Button from './Button';
+
 import './Dropdown.css';
 
 function Dropdown({ list, onChange }) {
@@ -40,12 +41,12 @@ function Dropdown({ list, onChange }) {
 
   return (
     <div ref={dropdown} className='dropdown'>
-      <button
-        className='btn btn-sub'
+      <Button
+        className='btn-sub'
         onClick={handleClickButton}
       >
         {selectedItem || '짜잔'}
-      </button>
+      </Button>
       {blink === true && (
         <ul className='menu-md'>
           {list.map((item) => (
