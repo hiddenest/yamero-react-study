@@ -1,36 +1,55 @@
 import React, { useState } from 'react';
 
+import Button from './Button';
 import Dropdown from './Dropdown';
+
+import quiz from './quiz';
 
 import './App.css';
 
 function App() {
-  const [a, setA] = useState();
-  const [b, setB] = useState();
+  const [currentPage, setCurrentPage] = useState(0);
 
-  function handleClickItemA(item) {
-    setA(item);
+  const currentQuiz = quiz[currentPage];
+
+  function handleClickPrev() {
+    setCurrentPage(currentPage - 1);
   }
 
-  function handleClickItemB(item) {
-    setB(item);
+  function handleClickNext() {
+    setCurrentPage(currentPage + 1);
   }
-
-  // 값이 짠짜잔 바뀜
-  console.error('testing', a, b);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <Dropdown
-          list={[1, '가나다', '찬희', 'asdf']}
-          onChange={handleClickItemA}
-        />
-        <Dropdown
-          list={[3,4,5,6,7]}
-          onChange={handleClickItemB}
-        />
+    <div className='App'>
+      <header className='App-header'>
+        <h1>
+          {currentQuiz.question}
+        </h1>
       </header>
+      <section className='App-content'>
+        <Dropdown
+          list={currentQuiz.choices}
+        />
+      </section>
+      <nav className='App-navigator'>
+        <div className='column'>
+          <Button
+            className='btn-sub'
+            onClick={handleClickPrev}
+          >
+            이전으로
+          </Button>
+        </div>
+        <div className='column'>
+          <Button
+            className='btn-key'
+            onClick={handleClickNext}
+          >
+            다음으로
+          </Button>
+        </div>
+      </nav>
     </div>
   );
 }
