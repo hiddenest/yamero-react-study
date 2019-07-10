@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import Button from './Button';
-import Dropdown from './Dropdown';
+import QuizView from './QuizView';
+import ResultView from './ResultView';
 
 import quiz from './quiz';
 
@@ -9,8 +9,10 @@ import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
+  const [sheet, setSheet] = useState([]);
 
   const currentQuiz = quiz[currentPage];
+  const currentAnswer = sheet[currentPage];
 
   function handleClickPrev() {
     setCurrentPage(currentPage - 1);
@@ -20,36 +22,44 @@ function App() {
     setCurrentPage(currentPage + 1);
   }
 
+  function handleClickChoice(item) {
+    const updatedSheet = [...sheet];
+
+    updatedSheet[currentPage] = item;
+    setSheet(updatedSheet);
+  }
+
+  function handleClickHome() {
+    setCurrentPage(0);
+    setSheet([]);
+  }
+
+  const percent = (currentPage / quiz.length) * 100;
+
   return (
     <div className='App'>
-      <header className='App-header'>
-        <h1>
-          {currentQuiz.question}
-        </h1>
-      </header>
-      <section className='App-content'>
-        <Dropdown
-          list={currentQuiz.choices}
+      <div
+        className='App-progressBar'
+        style={{
+          width: `${percent}%`,
+        }}
+      />
+      {currentPage !== quiz.length ? (
+        <QuizView
+          currentQuiz={currentQuiz}
+          currentAnswer={currentAnswer}
+          handleClickChoice={handleClickChoice}
+          handleClickPrev={handleClickPrev}
+          handleClickNext={handleClickNext}
+          currentPage={currentPage}
         />
-      </section>
-      <nav className='App-navigator'>
-        <div className='column'>
-          <Button
-            className='btn-sub'
-            onClick={handleClickPrev}
-          >
-            이전으로
-          </Button>
-        </div>
-        <div className='column'>
-          <Button
-            className='btn-key'
-            onClick={handleClickNext}
-          >
-            다음으로
-          </Button>
-        </div>
-      </nav>
+      ) : (
+        <ResultView
+          quiz={quiz}
+          sheet={sheet}
+          handleClickHome={handleClickHome}
+        />
+      )}
     </div>
   );
 }

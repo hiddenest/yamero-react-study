@@ -1,0 +1,34 @@
+input {
+  vertical-align: middle;
+  border-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.input {
+  box-sizing: border-box;
+  padding: 10.5px 14px;
+  font-size: 14px;
+  border: 1px solid #eef0f1;
+  background-color: #fafcff;
+  color: #4d5256;
+  border-radius: 4px;
+  transition: background 0.3s, border-color 0.3s;
+  text-overflow: ellipsis;
+}
+
+input:focus {
+  background-color: white;
+  border-color: #0082ff;
+  outline: none;
+}
+
+input::placeholder {
+  color: #bcc3c7;
+  line-height: inherit !important;
+}
+
+input.invalid {
+  border: 1px solid #ff0000;
+  outline: none;
+}

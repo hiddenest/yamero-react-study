@@ -4,10 +4,14 @@ import Button from './Button';
 
 import './Dropdown.css';
 
-function Dropdown({ list, onChange }) {
+function Dropdown({
+  list,
+  onChange,
+  selected, // Dropdown 현재 선택한 값 혹은 기본값
+}) {
   const dropdown = useRef();
   const [blink, setBlink] = useState(false);
-  const [selectedItem, setSelectedItem] = useState();
+  const [selectedItem, setSelectedItem] = useState(selected);
 
   function handleClickButton(event) {
     setBlink(!blink);
@@ -38,6 +42,10 @@ function Dropdown({ list, onChange }) {
       document.removeEventListener('click', handleClickDocument);
     };
   });
+
+  useEffect(() => {
+    setSelectedItem(selected);
+  }, [selected]);
 
   return (
     <div ref={dropdown} className='dropdown'>
